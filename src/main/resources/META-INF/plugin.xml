@@ -1,7 +1,9 @@
 <idea-plugin>
     <id>com.paprikaapps.i18n-locale-lens</id>
     <name>i18n Locale Lens</name>
+    <version>0.1.0</version>
     <vendor>Paprikaapps</vendor>
+    <idea-version since-build="242"/>
 
     <description><![CDATA[
         <p>
