@@ -1,0 +1,28 @@
+<idea-plugin>
+    <id>com.paprikaapps.i18n-locale-lens</id>
+    <name>i18n Locale Lens</name>
+    <vendor>Paprikaapps</vendor>
+
+    <description><![CDATA[
+        <p>
+            i18n Locale Lens adds Go to Declaration support for i18n keys stored in JSON locale files.
+        </p>
+        <ul>
+            <li>Jump from <code>t('common.button.ok')</code> to the exact JSON property.</li>
+            <li>Resolve namespace keys such as <code>auth:login.title</code>.</li>
+            <li>Resolve simple template strings such as <code>`${BASE_KEY}.title`</code>.</li>
+            <li>Configure locales, namespace file mappings, and JSON path templates per project.</li>
+        </ul>
+    ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>JavaScript</depends>
+    <depends>com.intellij.modules.json</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <psi.referenceContributor implementation="com.paprikaapps.i18nlocalelens.LocaleLensReferenceContributor"/>
+        <projectConfigurable
+            instance="com.paprikaapps.i18nlocalelens.LocaleLensConfigurable"
+            displayName="i18n Locale Lens"/>
+    </extensions>
+</idea-plugin>
